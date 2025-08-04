@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "react-confetti": "^6.4.0",
-    "react-snowfall": "^2.3.0",
-    "react-typing-animation": "^1.6.2"
+    
+    "react-snowfall": "^2.3.0"
+    
   },
   "name": "fullproject",
   "version": "1.0.0",
