@@ -2,7 +2,7 @@
   "dependencies": {
     "react-snowfall":  "^2.3.0"
   },
-  "name": "fullproject",
+  "name":"fullproject",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
