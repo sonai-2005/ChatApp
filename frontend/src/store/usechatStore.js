@@ -34,7 +34,7 @@ export const usechatStore=create((set , get)=>({
     console.warn("❌ getMessage called with invalid userId:", userId);
     return;
   }
-            const res = await axiosInstance.get(`/messages/${userId}`);
+            const res = await axiosInstance.get(`/messages/chat/${userId}`);
             //console.log("id is : " , userId);
 
             // console.log("messages : "+res.data);
