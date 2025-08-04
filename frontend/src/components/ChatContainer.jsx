@@ -17,7 +17,7 @@ function ChatContainer() {
 
     useEffect(() => {
         if (!selectedUser && users.length > 0) {
-            selectedUser(users[0]);
+            usechatStore.getState().setSelectedUser(users[0]);
         }
     }, [users, selectedUser, selectedUser]);
  
