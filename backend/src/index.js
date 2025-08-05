@@ -37,10 +37,15 @@ app.use(cors({
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// ✅ Now your routes will be listed
-console.log("✅ ROUTES LOADED:");
-console.log(listEndpoints(app));
-
+if (process.env.NODE_ENV !== "production") {
+  try {
+    const routes = listEndpoints(app);
+    console.log("✅ ROUTES LOADED:");
+    console.log(routes);
+  } catch (err) {
+    console.error("❌ Failed to list endpoints:", err.message);
+  }
+}
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
