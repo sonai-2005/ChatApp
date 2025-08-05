@@ -31,7 +31,7 @@ function ChatContainer() {
     }, [selectedUser?._id, getMessage, subscribeToMessage , unSubscribe])
     useEffect(()=>{
         if(messages && messageEndRef.current)
-        messageEndRef.current.scrollIntoView({behaviour:"smooth"});
+        messageEndRef.current.scrollIntoView({behavior:"smooth"});
     },[messages])
 
     if (isMessagesLoading) return (
