@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import LogoutMessage from '../components/LogoutMessage';
 
 
-
+const keywords = ["monali"];
 const SignUpPage = () => {
     const [showPassword, setShowpassword] = useState(false);
     const [formData, setformData] = useState({
@@ -19,25 +19,37 @@ const SignUpPage = () => {
     });
     const { signup, isSigningIn } = useAuthStore();
 
-    const validateForm = () => { 
-        if(!formData.fullName.trim())return toast.error("full name is required ");
-        if(!formData.email.trim())return toast.error("email is required ");
-        if(!formData.password.trim())return toast.error("password is required ");
-        if(formData.password.trim().length<8)return toast.error("password should be greater or equal to 8 ");
+    const validateForm = () => {
+        if (!formData.fullName.trim()) return toast.error("full name is required ");
+        if (!formData.email.trim()) return toast.error("email is required ");
+        if (!formData.password.trim()) return toast.error("password is required ");
+        if (formData.password.trim().length < 8) return toast.error("password should be greater or equal to 8 ");
         return true;
 
     }
 
 
-    const handlesubmit = (e) => {
+    const handlesubmit = (e) => 
+    {
         e.preventDefault();
+        const found = keywords.find(word =>
+            formData.fullName.toLowerCase().includes(word.toLowerCase())
+        );
+
+        if (found) {
+            
+              
+                    toast.error("something went wrong !");
+                    return;
+        }
+
         const success = validateForm();
 
-    if (success === true) signup(formData);
+        if (success === true) signup(formData);
     }
     return (
         <div className='min-h-screen grid '>
-        
+
             {/*left side..*/}
             <div className='flex flex-col justify-center items-center p-6 sm:p-12'>
                 <div className="w-full max-w-md space-y-8">
@@ -151,10 +163,10 @@ const SignUpPage = () => {
             title={"welcome friend ! "}
             subtitle={"sign in to LINK with us ! thank you "}
             /> */}
-            <Snowfall/>
-            <FallingBalls/>
-            
-            
+            <Snowfall />
+            <FallingBalls />
+
+
         </div>
     )
 }
