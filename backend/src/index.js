@@ -40,9 +40,6 @@ app.use("/api/messages", messageRoutes);
 // ✅ Now your routes will be listed
 console.log("✅ ROUTES LOADED:");
 console.log(listEndpoints(app));
-//console.log("📌 /api/messages/users GET [Protected]");
-console.log("📌 /api/messages/chat/:id GET [Protected]");
-console.log("📌 /api/messages/send/:id POST [Protected]");
 
 
 if (process.env.NODE_ENV === "production") {
