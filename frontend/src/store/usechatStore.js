@@ -31,7 +31,7 @@ export const usechatStore=create((set , get)=>({
         set({isMessagesLoading:true});
         try {
             if (!userId) {
-    console.warn("❌ getMessage called with invalid userId:", userId);
+    console.warn("getMessage called with invalid userId:", userId);
     return;
   }
             const res = await axiosInstance.get(`/messages/chat/${userId}`);
@@ -50,7 +50,7 @@ export const usechatStore=create((set , get)=>({
     sendMessage:async(messageData)=>{
         const {selectedUser , messages} = get();
          if (!selectedUser?._id) {
-    console.warn("❌ Tried to send message with no selectedUser.");
+    
     toast.error("No user selected");
     return;
   }
@@ -61,7 +61,7 @@ export const usechatStore=create((set , get)=>({
 
         } catch (error) {
             console.log("here is a error in the usechat send Message: ", error.message);
-            toast.error(error.response.data.message);
+            toast.error("try again");
         }
     },
 
