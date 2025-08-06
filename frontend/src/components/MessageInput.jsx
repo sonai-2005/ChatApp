@@ -55,7 +55,7 @@ const MessageInput = () => {
         }
     }
     return (
-        <div className="p-4 w-full">
+        <div className="pl-5 pr-5 w-full">
             {preview && (
                 <div className="mb-3 flex items-center gap-2">
                     <div className="relative">
@@ -109,7 +109,7 @@ const MessageInput = () => {
                         className="btn btn-sm btn-circle"
                         disabled={!text.trim() && !preview}
                     >
-                        <Send size={22} />
+                        <Send  size={22} />
                     </button>
                 </div>
             </form>

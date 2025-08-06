@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="bg-base-100 rounded-4xl shadow-cl w-full max-w-6xl h-[calc(100vh-8rem)]">
         <div className=" flex rounded-lg space-x-4 ">
         <Sidebar/>
-        <div className=' flex w-full  rounded-3xl overflow-hidden border-base-300 border-3'>{!selectedUser?<NoChatSelected/>:<ChatContainer/>}</div>
+        <div className=' flex w-full h-110  rounded-3xl overflow-hidden border-base-300 border-3'>{!selectedUser?<NoChatSelected/>:<ChatContainer/>}</div>
         </div>
         </div>
         </div>

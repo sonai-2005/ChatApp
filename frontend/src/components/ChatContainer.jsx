@@ -45,7 +45,7 @@ function ChatContainer() {
 
    return (
     
-        <div className='flex-1 flex flex-col h-110 '>
+        <div className='flex-1 flex flex-col h-100 '>
             <ChatHeader />
             
             {/* messages container */}
